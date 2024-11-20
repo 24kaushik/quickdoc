@@ -1,0 +1,16 @@
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+@font-face {
+  font-family: 'Josefin Sans'; /* Name your font */
+  src: url('./fonts/JosefinSans-Regular.ttf') format('truetype'); /* Corrected file path and format */
+  font-weight: normal; /* Optional: set weight */
+  font-style: normal;  /* Optional: set style */
+}
+
+.font-josefin {
+  font-family: "Josefin Sans", sans-serif;
+}
