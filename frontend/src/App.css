@@ -1,16 +1,48 @@
-
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
-
 @font-face {
-  font-family: 'Josefin Sans'; /* Name your font */
-  src: url('./fonts/JosefinSans-Regular.ttf') format('truetype'); /* Corrected file path and format */
+  font-family: "Josefin Sans"; /* Name your font */
+  src: url("./fonts/JosefinSans-Regular.ttf") format("truetype"); /* Corrected file path and format */
   font-weight: normal; /* Optional: set weight */
-  font-style: normal;  /* Optional: set style */
+  font-style: normal; /* Optional: set style */
+}
+@font-face {
+  font-family: "Noto Sans"; /* Name your font */
+  src: url("./fonts/NotoSans-Regular.ttf") format("truetype"); /* Corrected file path and format */
+  font-weight: normal; /* Optional: set weight */
+  font-style: normal; /* Optional: set style */
+}
+@font-face {
+  font-family: "Noto Sans Semi"; /* Name your font */
+  src: url("./fonts/NotoSans-SemiBold.ttf") format("truetype"); /* Corrected file path and format */
+  font-weight: normal; /* Optional: set weight */
+  font-style: normal; /* Optional: set style */
+}
+@font-face {
+  font-family: "Outfit"; /* Name your font */
+  src: url("./fonts/Outfit-Regular.ttf") format("truetype"); /* Corrected file path and format */
+  font-weight: normal; /* Optional: set weight */
+  font-style: normal; /* Optional: set style */
+}
+@font-face {
+  font-family: "Outfit Semi"; /* Name your font */
+  src: url("./fonts/Outfit-SemiBold.ttf") format("truetype"); /* Corrected file path and format */
+  font-weight: normal; /* Optional: set weight */
+  font-style: normal; /* Optional: set style */
 }
 
 .font-josefin {
   font-family: "Josefin Sans", sans-serif;
 }
+.font-noto-semi {
+  font-family: "Noto Sans Semi", sans-serif;
+}
+.font-outfit {
+  font-family: "Outfit", sans-serif;
+}
+.font-outfit-semi {
+  font-family: "Outfit Semi", sans-serif;
+}
+
