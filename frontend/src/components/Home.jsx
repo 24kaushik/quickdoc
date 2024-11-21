@@ -24,6 +24,7 @@ import img12 from "../assets/hospital-logos/12.jpg";
 import heroDoc from "../assets/hero-doc.png";
 import s4Hero from "../assets/s4-hero.png";
 import Contact from "./Contact";
+import About from "./About";
 
 const Home = () => {
   return (
@@ -32,6 +33,7 @@ const Home = () => {
       <Section2 />
       <Section3 />
       <Section4 />
+      <About />
       <Contact />
     </div>
   );
@@ -345,5 +347,5 @@ const Section4 = () => {
   );
 };
 
-export {HoverBook, Card};
+export { HoverBook, Card };
 export default Home;
