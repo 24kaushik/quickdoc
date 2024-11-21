@@ -1,5 +1,4 @@
 import React from "react";
-import heroDoc from "../assets/hero-doc.png";
 import Marquee from "react-fast-marquee";
 
 import { FaUserDoctor } from "react-icons/fa6";
@@ -22,7 +21,9 @@ import img10 from "../assets/hospital-logos/10.jpg";
 import img11 from "../assets/hospital-logos/11.jpg";
 import img12 from "../assets/hospital-logos/12.jpg";
 
+import heroDoc from "../assets/hero-doc.png";
 import s4Hero from "../assets/s4-hero.png";
+import Contact from "./Contact";
 
 const Home = () => {
   return (
@@ -31,6 +32,7 @@ const Home = () => {
       <Section2 />
       <Section3 />
       <Section4 />
+      <Contact />
     </div>
   );
 };
@@ -170,7 +172,7 @@ function HoverBook() {
             </span>
           </div>
           <div className="w-3/4 h-full">
-            <div className="h-1/4 py-0.5 text-gray-600">Gender</div>
+            <div className="h-1/4 py-0.5 text-gray-600">Who</div>
             <div className="h-3/4 py-3 pr-3 flex items-center">
               <select
                 name="gender"
@@ -223,7 +225,7 @@ const Section2 = () => {
 
 const Section3 = () => {
   return (
-    <div className='bg-[url("./s3-bg.png")] h-80 mx-28 my-16 rounded-2xl flex p-14 relative'>
+    <div className='bg-[url("./s3-bg.png")] h-80 mx-28 my-16 rounded-2xl flex p-14 relative shadow-lg'>
       <div className="w-5/12 text-5xl font-noto-semi text-gray-800 p-2">
         Easy steps to make your solution
       </div>
@@ -300,7 +302,7 @@ const Card = ({ icon, title, desc, className }) => {
 
 const Section4 = () => {
   return (
-    <div className="flex my-40 mx-32">
+    <div className="flex mt-40 mb-32 mx-32">
       <div className="w-1/2">
         <img src={s4Hero} alt="section 4 hero" />
         <div className="text-gray-400 mx-10 text-lg">
@@ -343,4 +345,5 @@ const Section4 = () => {
   );
 };
 
+export {HoverBook, Card};
 export default Home;
