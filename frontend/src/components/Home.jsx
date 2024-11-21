@@ -1,9 +1,13 @@
 import React from "react";
 import heroDoc from "../assets/hero-doc.png";
+import Marquee from "react-fast-marquee";
+
+import { FaUserDoctor } from "react-icons/fa6";
 import { IoLocationOutline } from "react-icons/io5";
 import { SlCalender } from "react-icons/sl";
 import { GoPerson } from "react-icons/go";
-import Marquee from "react-fast-marquee";
+import { FaLightbulb } from "react-icons/fa";
+import { IoMdCheckmarkCircle } from "react-icons/io";
 
 import img1 from "../assets/hospital-logos/1.jpg";
 import img2 from "../assets/hospital-logos/2.jpg";
@@ -18,11 +22,15 @@ import img10 from "../assets/hospital-logos/10.jpg";
 import img11 from "../assets/hospital-logos/11.jpg";
 import img12 from "../assets/hospital-logos/12.jpg";
 
+import s4Hero from "../assets/s4-hero.png";
+
 const Home = () => {
   return (
     <div>
       <Section1 />
       <Section2 />
+      <Section3 />
+      <Section4 />
     </div>
   );
 };
@@ -195,20 +203,142 @@ const Section2 = () => {
       <h1 className="text-center font-noto-semi text-5xl text-gray-400">
         Our Partners
       </h1>
-        <Marquee className="my-10">
-          <img className="h-24 mx-7" src={img1} alt="hospital 1" />
-          <img className="h-24 mx-7" src={img2} alt="hospital 2" />
-          <img className="h-24 mx-7" src={img3} alt="hospital 3" />
-          <img className="h-24 mx-7" src={img4} alt="hospital 4" />
-          <img className="h-24 mx-7" src={img5} alt="hospital 5" />
-          <img className="h-24 mx-7" src={img6} alt="hospital 6" />
-          <img className="h-24 mx-7" src={img7} alt="hospital 7" />
-          <img className="h-24 mx-7" src={img8} alt="hospital 8" />
-          <img className="h-24 mx-7" src={img9} alt="hospital 9" />
-          <img className="h-24 mx-7" src={img10} alt="hospital 10" />
-          <img className="h-24 mx-7" src={img11} alt="hospital 11" />
-          <img className="h-24 mx-7" src={img12} alt="hospital 12" />
-        </Marquee>
+      <Marquee className="my-10">
+        <img className="h-24 mx-7" src={img1} alt="hospital 1" />
+        <img className="h-24 mx-7" src={img2} alt="hospital 2" />
+        <img className="h-24 mx-7" src={img3} alt="hospital 3" />
+        <img className="h-24 mx-7" src={img4} alt="hospital 4" />
+        <img className="h-24 mx-7" src={img5} alt="hospital 5" />
+        <img className="h-24 mx-7" src={img6} alt="hospital 6" />
+        <img className="h-24 mx-7" src={img7} alt="hospital 7" />
+        <img className="h-24 mx-7" src={img8} alt="hospital 8" />
+        <img className="h-24 mx-7" src={img9} alt="hospital 9" />
+        <img className="h-24 mx-7" src={img10} alt="hospital 10" />
+        <img className="h-24 mx-7" src={img11} alt="hospital 11" />
+        <img className="h-24 mx-7" src={img12} alt="hospital 12" />
+      </Marquee>
+    </div>
+  );
+};
+
+const Section3 = () => {
+  return (
+    <div className='bg-[url("./s3-bg.png")] h-80 mx-28 my-16 rounded-2xl flex p-14 relative'>
+      <div className="w-5/12 text-5xl font-noto-semi text-gray-800 p-2">
+        Easy steps to make your solution
+      </div>
+      <div className="w-4/12 py-5 text-gray-800">
+        Easily Make Appointment With Our Best Doctor For your Families In The
+        Same Day Or The Next Day
+      </div>
+      <div className="w-3/12 flex justify-center items-start pt-5">
+        <button
+          type="button"
+          class="text-white bg-gradient-to-br from-green-400 to-blue-600 hover:bg-gradient-to-bl focus:ring-4 focus:outline-none focus:ring-green-200 dark:focus:ring-green-800 font-medium rounded-lg text-lg px-5 py-2.5 text-center me-2 mb-2"
+        >
+          Make an Appointment
+        </button>
+      </div>
+      <div className="absolute w-[90%] left-1/2 -translate-x-1/2 -bottom-28 flex justify-evenly space-x-5">
+        {[
+          {
+            icon: <FaUserDoctor />,
+            title: "Search Doctor",
+            desc: "Before booking appointment, search doctors by category",
+            className: "text-teal-500 bg-teal-100",
+          },
+          {
+            icon: <IoLocationOutline />,
+            title: "Choose Your Location",
+            desc: "And enter your location so that we will find the nearest doctor to you",
+            className: "text-purple-600 bg-purple-100",
+          },
+          {
+            icon: <SlCalender />,
+            title: "Schedule Appointment",
+            desc: "Then select a date to set an appointment with your doctor",
+            className: "text-red-600 bg-red-100",
+          },
+          {
+            icon: <FaLightbulb />,
+            title: "Get your solution",
+            desc: "We will help ypu find and provide solutions for your health",
+            className: "text-yellow-300 bg-yellow-100",
+          },
+        ].map((i) => {
+          return (
+            <Card
+              icon={i.icon}
+              title={i.title}
+              desc={i.desc}
+              className={i.className}
+            />
+          );
+        })}
+      </div>
+    </div>
+  );
+};
+
+const Card = ({ icon, title, desc, className }) => {
+  return (
+    <div class="max-w-sm p-6 bg-white border border-gray-300 rounded-lg dark:bg-gray-800 dark:border-gray-700 shadow-lg">
+      <div className="flex justify-center text-4xl">
+        <div className={`p-3 rounded-2xl ${className} `}>{icon}</div>
+      </div>
+      <a href="#">
+        <h5 class="mb-2 text-2xl font-semibold tracking-tight text-gray-900 dark:text-white text-center">
+          {title}
+        </h5>
+      </a>
+      <p class="mb-3 font-normal text-gray-500 dark:text-gray-400 text-center">
+        {desc}
+      </p>
+    </div>
+  );
+};
+
+const Section4 = () => {
+  return (
+    <div className="flex my-40 mx-32">
+      <div className="w-1/2">
+        <img src={s4Hero} alt="section 4 hero" />
+        <div className="text-gray-400 mx-10 text-lg">
+          We only partner with the best quality hospitals to provide you
+          services
+        </div>
+      </div>
+      <div className="w-1/2">
+        <div className="h-[37.5%] px-10 mt-10 mb-4 text-4xl leading-[3.5rem] font-noto-semi">
+          We Always Ensure The Best Medical Treatment For Your Health
+        </div>
+        <ul className="h-[35%] px-10 text-2xl font-outfit text-gray-600">
+          <li className="my-3 flex items-center">
+            <IoMdCheckmarkCircle color="#faca15" />
+            &nbsp; Top specialist doctors
+          </li>
+          <li className="my-3 flex items-center">
+            <IoMdCheckmarkCircle color="#faca15" />
+            &nbsp; Make appointments fast
+          </li>
+          <li className="my-3 flex items-center">
+            <IoMdCheckmarkCircle color="#faca15" />
+            &nbsp; Best hospitals tailored to your needs
+          </li>
+          <li className="my-3 flex items-center">
+            <IoMdCheckmarkCircle color="#faca15" />
+            &nbsp; Top notch service
+          </li>
+        </ul>
+        <div className="h-[27.5%] flex justify-center items-start">
+          <button
+            type="button"
+            class="focus:outline-none text-white bg-yellow-300 hover:bg-yellow-400 focus:ring-4 focus:ring-yellow-300 font-medium rounded-lg text-sm px-5 py-2.5 me-2 mb-2 dark:focus:ring-yellow-900"
+          >
+            Make an Appointment
+          </button>
+        </div>
+      </div>
     </div>
   );
 };
