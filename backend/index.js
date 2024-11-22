@@ -91,8 +91,9 @@ app.post("/appointments", verifyToken, async (req, res) => {
       person
     });
     await newAppointment.save();
-    res.status(201).json(newAppointment);
+    res.status(201).json({...newAppointment._doc, ok:true});
   } catch (error) {
+    console.log(error);
     res.status(500).send("Internal server error");
   }
 });

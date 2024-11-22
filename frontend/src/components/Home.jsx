@@ -62,8 +62,40 @@ const Section1 = () => {
 };
 
 function HoverBook() {
+  const handleSubmit = async (event) => {
+    event.preventDefault();
+    const token = localStorage.getItem("token");
+    if (!token) {
+      window.location.href = "/login";
+      return;
+    }
+
+    const state = event.target.location.value;
+    const date = event.target.date.value;
+    const person = event.target.gender.value;
+    const doctorType = event.target.doctor.value;
+
+    const response = await fetch("http://localhost:3000/appointments", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+        "authorization": token,
+      },
+      body: JSON.stringify({ state, date, person, doctorType }),
+    });
+
+    if (response.ok) {
+      alert("Appointment booked successfully");
+    } else {
+      // Handle error response
+    }
+  };
+
   return (
-    <form className="w-[62vw] h-40 shadow-xl border-2 border-gray-100 bg-white rounded-lg p-4">
+    <form
+      className="w-[62vw] h-40 shadow-xl border-2 border-gray-100 bg-white rounded-lg p-4"
+      onSubmit={handleSubmit}
+    >
       <div className="flex h-2/5">
         <div className="text-2xl w-1/3 font-outfit font-semibold px-2 ">
           Book Appointment Now
@@ -75,25 +107,26 @@ function HoverBook() {
               defaultChecked
               type="radio"
               name="doctor"
+              value={"general"}
             />
             <span className="peer-checked:text-blue-500 peer-checked:border-blue-500 border-b-[3px] border-transparent">
               General
             </span>
           </label>
           <label className="cursor-pointer">
-            <input className="hidden peer" type="radio" name="doctor" />
+            <input className="hidden peer" type="radio" name="doctor" value={"pediatric"} />
             <span className="peer-checked:text-blue-500 peer-checked:border-blue-500 border-b-[3px] border-transparent">
               Pediatric
             </span>
           </label>
           <label className="cursor-pointer">
-            <input className="hidden peer" type="radio" name="doctor" />
+            <input className="hidden peer" type="radio" name="doctor" value="dentist" />
             <span className="peer-checked:text-blue-500 peer-checked:border-blue-500 border-b-[3px] border-transparent">
               Dentist
             </span>
           </label>
           <label className="cursor-pointer">
-            <input className="hidden peer" type="radio" name="doctor" />
+            <input className="hidden peer" type="radio" name="doctor" value={"ent specialist"} />
             <span className="peer-checked:text-blue-500 peer-checked:border-blue-500 border-b-[3px] border-transparent">
               ENT Specialist
             </span>
